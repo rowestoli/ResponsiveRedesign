@@ -1,0 +1,428 @@
+/* Base styles */
+:root {
+    --primary: rgb(107, 33, 168);
+    --primary-light: rgb(147, 51, 234);
+    --primary-dark: rgb(88, 28, 135);
+    --primary-foreground: rgb(255, 255, 255);
+    --secondary: rgb(226, 232, 240);
+    --secondary-foreground: rgb(15, 23, 42);
+    --background: rgb(255, 255, 255);
+    --card: rgb(255, 255, 255);
+    --card-foreground: rgb(15, 23, 42);
+    --border: rgb(226, 232, 240);
+    --input: rgb(226, 232, 240);
+    --muted: rgb(241, 245, 249);
+    --muted-foreground: rgb(100, 116, 139);
+    --accent: rgb(248, 250, 252);
+    --accent-foreground: rgb(15, 23, 42);
+    --destructive: rgb(239, 68, 68);
+    --destructive-foreground: rgb(255, 255, 255);
+    --radius: 0.5rem;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--card-foreground);
+    line-height: 1.6;
+  }
+  
+  .bg-gradient {
+    background-image: linear-gradient(to bottom, white, #f3e8ff);
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .main-content {
+    padding: 3rem 1rem;
+    max-width: 1200px;
+  }
+  
+  .image-no-distort {
+    display: block;
+    margin: 0 auto;  /* centers horizontally */
+    max-width: 800px; /* cap the width to 400px or whatever you prefer */
+    height: auto;    /* maintain aspect ratio */
+    object-fit: contain; 
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    text-align: center;
+    background: linear-gradient(to right, #6b21a8, #9333ea);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    text-align: center;
+    color: #9333ea;
+    margin-top: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+    color: #6b21a8;
+  }
+  
+  .subsection-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #9333ea;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #9333ea;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+  
+  .image-caption {
+    margin-top: 0.75rem;
+    color: #9333ea;
+    font-size: 0.875rem;
+  }
+  
+  .centered {
+    text-align: center;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Layout */
+  .section {
+    margin-bottom: 5rem;
+  }
+  
+  .subsection {
+    margin-bottom: 3rem;
+  }
+  
+  .two-column {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .three-column {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .final-thoughts {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .two-column {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .three-column {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  /* Components */
+  .header {
+    background: linear-gradient(to right, #f3e8ff, #f9f5ff);
+    padding: 3rem 1rem;
+    border-bottom: 1px solid #f3e8ff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .card {
+    background-color: var(--card);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid #f3e8ff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .list {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+  }
+  
+  .list li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .image-card {
+    border-radius: var(--radius);
+    border: 1px solid #f3e8ff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .aspect-ratio {
+    position: relative;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+    width: 100%;
+  }
+  
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 10;
+  }
+  
+  .full-width-image {
+    width: 100%;
+    display: block;
+  }
+  
+  .placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f5ff;
+    z-index: 5;
+  }
+  
+  .placeholder-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .placeholder-title {
+    font-weight: 500;
+    font-size: 1.125rem;
+    color: #9333ea;
+    margin-bottom: 0.5rem;
+  }
+  
+  .placeholder-text {
+    color: #a78bfa;
+    font-size: 0.875rem;
+    max-width: 80%;
+    text-align: center;
+  }
+  
+  .full-width {
+    position: relative;
+    height: 100%;
+    display: none;
+  }
+  
+  /* Tabs */
+  .tabs {
+    margin-top: 1.5rem;
+  }
+  
+  .tab-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    background-color: #f3e8ff;
+    border-radius: var(--radius);
+  }
+  
+  .tab {
+    padding: 0.75rem;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: #6b21a8;
+    border: none;
+    background: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tab.active {
+    background-color: white;
+    color: #9333ea;
+  }
+  
+  .tab-content {
+    display: none;
+    margin-top: 1.5rem;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  /* Carousel */
+  .carousel {
+    position: relative;
+    margin-bottom: 3rem;
+  }
+  
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel-slide {
+    display: none;
+  }
+  
+  .carousel-slide.active {
+    display: block;
+  }
+  
+  .carousel-caption {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .carousel-button {
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background-color: #f3e8ff;
+    border: 1px solid #e9d5ff;
+    color: #6b21a8;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-button:hover {
+    background-color: #e9d5ff;
+  }
+  
+  .carousel-button.prev::before {
+    content: "←";
+  }
+  
+  .carousel-button.next::before {
+    content: "→";
+  }
+  
+  .carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .carousel-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    background-color: #e9d5ff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .carousel-dot.active {
+    background-color: #9333ea;
+  }
+  
+  /* Footer */
+  .footer {
+    background: linear-gradient(to right, #6b21a8, #9333ea);
+    padding: 2.5rem 1rem;
+    border-top: 1px solid #6b21a8;
+    color: white;
+    text-align: center;
+  }
+  
+  /* 
+     -----------------------------------------
+     NEW CLASSES FOR HEADER LINK & SUBSECTION
+     -----------------------------------------
+  */
+  
+  /* 1. Header “View Live Redesign” Link */
+  .header-link-container {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .header-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #6b21a8; /* main gradient purple */
+    color: #fff;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .header-link:hover {
+    background-color: #9333ea; /* lighter purple on hover */
+  }
+  
+  /* 2. “See the Live Redesign” Subsection Link */
+  .subsection-link {
+    font-size: 1.125rem; /* matches text-lg */
+    text-align: center;
+    color: #6b21a8;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .subsection-link a {
+    color: #9333ea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .subsection-link a:hover {
+    color: #6b21a8;
+    text-decoration: underline;
+  }
+  

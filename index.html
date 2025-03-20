@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birds Landing Redesign</title>
+    <meta name="description" content="Birds Landing Redesign Case Study" />
+    <!-- Link to your updated CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="root">
+      <div class="min-h-screen bg-gradient">
+        <!-- Header -->
+        <header class="header">
+          <div class="container">
+            <h1 class="title">Birds Landing Redesign</h1>
+            <p class="subtitle">A responsive website redesign case study</p>
+
+            <!-- Quick Link to Live Redesign -->
+            <div class="header-link-container">
+              <a 
+                href="https://rowestoli.github.io/BirdsLandingRedesign/" 
+                class="header-link" 
+                target="_blank"
+              >
+                View Live Redesign
+              </a>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container main-content">
+          <!-- Project Overview -->
+          <section class="section">
+            <h2 class="section-title">Project Overview</h2>
+            <div class="two-column">
+              <div>
+                <p class="text-lg">
+                  This case study presents the redesign of Birds Landing Shooting Sports' website - a local business
+                  that offers hunting and clay shooting facilities. The original website presented several usability
+                  challenges that affected its efficiency, learnability, and accessibility.
+                </p>
+                <p class="text-lg">
+                  My goal was to create a more easily navigatable, responsive, accessible, and user-friendly design that maintains
+                  the current simplicity while significantly improving the user experience across different device types.
+                </p>
+              </div>
+              <div class="card">
+                <h3 class="card-title">Project Scope</h3>
+                <ul class="list">
+                  <li>Usability problem identification</li>
+                  <li>Visual design style guide creation</li>
+                  <li>Responsive mockups for mobile, tablet, and desktop</li>
+                  <li>HTML/CSS implementation</li>
+                  <li>Accessibility testing and improvements</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Before & After -->
+          <section class="section">
+            <h2 class="section-title">Before & After</h2>
+            <div class="two-column">
+              <div>
+                <h3 class="card-title">Original Website</h3>
+                <div class="image-card">
+                  <div class="aspect-ratio">
+                    <!-- Updated src to remove leading slash -->
+                    <img src="assets/before.png" alt="Original Birds Landing website" class="image" />
+                  </div>
+                </div>
+                <p class="image-caption">
+                  The original design with poor accessibility and visual appeal.
+                </p>
+              </div>
+              <div>
+                <h3 class="card-title">Redesigned Website</h3>
+                <div class="image-card">
+                  <div class="aspect-ratio">
+                    <!-- Updated src to remove leading slash -->
+                    <img src="assets/after.png" alt="Redesigned Birds Landing website" class="image" />
+                  </div>
+                </div>
+                <p class="image-caption">
+                  The redesigned desktop view with improved navigation, clear visual hierarchy, and responsiveness.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Problem Identification -->
+          <section class="section">
+            <h2 class="section-title">Identifying Usability Problems</h2>
+            <div class="tabs">
+              <div class="tab-list">
+                <button class="tab active" data-tab="usability">Usability Issues</button>
+                <button class="tab" data-tab="accessibility">Accessibility</button>
+                <button class="tab" data-tab="conceptual">Conceptual Model</button>
+              </div>
+
+              <div class="tab-content active" id="usability">
+                <div class="three-column">
+                  <div class="card">
+                    <h3 class="card-title">Efficiency</h3>
+                    <ul class="list">
+                      <li>Difficult navigation on desktop - dropdowns not readable</li>
+                      <li>Poor information hierarchy - random info on main page</li>
+                      <li>No direct path to main services (clay shooting booking)</li>
+                      <li>Inconsistent layout between pages</li>
+                    </ul>
+                  </div>
+                  <div class="card">
+                    <h3 class="card-title">Learnability</h3>
+                    <ul class="list">
+                      <li>Confusing menu structure with unclear categories</li>
+                      <li>Inconsistent visual cues for clickable elements</li>
+                      <li>Non-standard form layout without clear labels</li>
+                    </ul>
+                  </div>
+                  <div class="card">
+                    <h3 class="card-title">Memorability</h3>
+                    <ul class="list">
+                      <li>Inconsistent branding across pages</li>
+                      <li>No visual cues to indicate current page</li>
+                      <li>Menu items don't follow patterns</li>
+                      <li>Different layouts on different screen sizes and pages</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-content" id="accessibility">
+                <div class="card">
+                  <h3 class="card-title">WebAIM WAVE Analysis</h3>
+                  <p>
+                    Using the WebAIM WAVE tool revealed several accessibility issues with the original website:
+                  </p>
+                  <ul class="list">
+                    <li>Insufficient color contrast between text and background</li>
+                    <li>Missing alternative text for images</li>
+                    <li>Lack of proper heading structure</li>
+                    <li>Missing form labels for hiring now section</li>
+                    <li>No skip navigation links for screen reader users</li>
+                    <li>Small touch targets making mobile interaction difficult</li>
+                  </ul>
+                  <p>
+                    These issues significantly impacted users with visual impairments, mobility challenges,
+                    and those using assistive technologies.
+                  </p>
+                </div>
+              </div>
+
+              <div class="tab-content" id="conceptual">
+                <div class="card">
+                  <h3 class="card-title">Conceptual Model Issues</h3>
+                  <p>
+                    The original website's conceptual model had several disconnects between the user's
+                    mental model and the system's implementation:
+                  </p>
+                  <ul class="list">
+                    <li>The navigation didn't clearly indicate the site's structure or content hierarchy</li>
+                    <li>Critical business information (hours, location) was inconsistently placed and labeled</li>
+                    <li>Call-to-action elements didn't stand out visually from regular content</li>
+                    <li>Mobile navigation was unintuitive with hidden important functions</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Design Process -->
+          <section class="section">
+            <h2 class="section-title">Visual Design Process</h2>
+
+            <div class="subsection">
+              <h3 class="subsection-title">Style Guide</h3>
+              <div class="image-card">
+                <img src="assets/style-guide.png" alt="Birds Landing Style Guide" class="full-width-image" />
+              </div>
+              <p class="image-caption">
+                The style guide established a consistent visual language with a focus on the brand's green and orange colors,
+                clear typography using Dinn Neuzeit Grotesk, and standardized UI components.
+              </p>
+            </div>
+
+            <div class="subsection">
+              <h3 class="subsection-title">Design Decisions</h3>
+              <div class="two-column">
+                <div class="card">
+                  <h4 class="card-title">Color & Typography</h4>
+                  <ul class="list">
+                    <li>Maintained brand colors (green #076311 and orange #E67E22) for recognition</li>
+                    <li>Increased contrast ratios to meet WCAG AA accessibility standards</li>
+                    <li>Kept Neuzeit Grotesk font for recognition and style</li>
+                    <li>Implemented consistent text sizing and dropdown coloring</li>
+                    <li>Decreased white space to improve readability and design</li>
+                  </ul>
+                </div>
+                <div class="card">
+                  <h4 class="card-title">Layout & Navigation</h4>
+                  <ul class="list">
+                    <li>Redesigned navigation hovers and button locations for usability</li>
+                    <li>Created responsive design adapting seamlessly across devices</li>
+                    <li>Impplemented hamburger menu functionality on mobile</li>
+                    <li>Prioritized content based on user needs (hours, booking)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Responsive Implementation -->
+          <section class="section">
+            <h2 class="section-title">Responsive Mocks</h2>
+
+            <!-- Design Mockup Carousel -->
+            <div class="carousel">
+              <div class="carousel-container">
+                <!-- Mobile / iPhone Mock (true-to-size) -->
+                <div class="carousel-slide active" id="slide-0">
+                  <div class="image-card">
+                    <!-- No more .aspect-ratio here; using .image-no-distort -->
+                    <img 
+                      src="assets/phonemock.png"
+                      alt="Mobile design"
+                      class="image-no-distort"
+                    />
+                  </div>
+                  <div class="carousel-caption">
+                    <h3 class="card-title">Mobile Design</h3>
+                    <p>Optimized for 375px width with improved hamburger menu and prioritized content.</p>
+                  </div>
+                </div>
+
+                <!-- Tablet Mock (true-to-size) -->
+                <div class="carousel-slide" id="slide-1">
+                  <div class="image-card">
+                    <!-- No more .aspect-ratio; using .image-no-distort -->
+                    <img 
+                      src="assets/tabletmock.png"
+                      alt="Tablet design"
+                      class="image-no-distort"
+                    />
+                  </div>
+                  <div class="carousel-caption">
+                    <h3 class="card-title">Tablet Design</h3>
+                    <p>Designed for 768px width with full navigation display and responsive grid system.</p>
+                  </div>
+                </div>
+
+                <!-- Desktop / Laptop Mock (also true-to-size if desired) -->
+                <div class="carousel-slide" id="slide-2">
+                  <div class="image-card">
+                    <!-- No .aspect-ratio; using .image-no-distort -->
+                    <img
+                      src="assets/laptopmock.png"
+                      alt="Desktop design"
+                      class="image-no-distort"
+                    />
+                  </div>
+                  <div class="carousel-caption">
+                    <h3 class="card-title">Desktop Design</h3>
+                    <p>Optimized for 1024px+ width with full navigation and enhanced visual presentation.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-controls">
+                <button class="carousel-button prev"></button>
+                <div class="carousel-dots">
+                  <button class="carousel-dot active" data-slide="0"></button>
+                  <button class="carousel-dot" data-slide="1"></button>
+                  <button class="carousel-dot" data-slide="2"></button>
+                </div>
+                <button class="carousel-button next"></button>
+              </div>
+            </div>
+
+            <!-- Live Redesign Subsection -->
+            <div class="subsection">
+              <h3 class="subsection-title">See the Live Redesign</h3>
+              <p class="subsection-link">
+                View the full redesign in action on GitHub Pages:
+                <a href="https://rowestoli.github.io/BirdsLandingRedesign/" target="_blank">
+                  Birds Landing Redesign
+                </a>.
+              </p>
+            </div>
+
+            <div class="subsection">
+              <h3 class="subsection-title">Technical Implementation</h3>
+              <div class="card">
+                <p>
+                  The redesign was implemented using modern HTML and CSS techniques:
+                </p>
+                <ul class="list">
+                  <li><strong>Flexbox Layout:</strong> Used for responsive navigation and content areas</li>
+                  <li><strong>CSS Media Queries:</strong> Implemented breakpoints at 480px, 767px, 1024px, and 1920px</li>
+                  <li><strong>Semantic HTML:</strong> Proper use of headers, sections, and ARIA attributes</li>
+                  <li><strong>Custom Font Implementation:</strong> Properly loaded with fallbacks</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Results & Conclusion -->
+          <section class="section">
+            <div class="final-thoughts">
+              <h3 class="subsection-title">Final Thoughts</h3>
+              <p class="text-lg centered">
+                This redesign project demonstrates how thoughtful user-centered design can transform a
+                difficult-to-navigate website into an accessible, efficient, and pleasant experience
+                while maintaining brand identity. The implementation of responsive design principles ensures
+                that all users, regardless of their device, can easily access the information they need.
+              </p>
+            </div>
+          </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="container">
+            <p>
+              Birds Landing Website Case Study • Responsive Redesign
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      // Tab functionality
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Remove active class from all tabs and content
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+          
+          // Add active class to clicked tab and corresponding content
+          tab.classList.add('active');
+          document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+      });
+      
+      // Carousel functionality
+      const carousel = {
+        currentSlide: 0,
+        slides: document.querySelectorAll('.carousel-slide'),
+        dots: document.querySelectorAll('.carousel-dot'),
+        
+        showSlide: function(index) {
+          // Hide all slides and deactivate all dots
+          this.slides.forEach(slide => slide.classList.remove('active'));
+          this.dots.forEach(dot => dot.classList.remove('active'));
+          
+          // Show the selected slide and activate its dot
+          this.slides[index].classList.add('active');
+          this.dots[index].classList.add('active');
+          this.currentSlide = index;
+        },
+        
+        nextSlide: function() {
+          let newIndex = this.currentSlide + 1;
+          if (newIndex >= this.slides.length) newIndex = 0;
+          this.showSlide(newIndex);
+        },
+        
+        prevSlide: function() {
+          let newIndex = this.currentSlide - 1;
+          if (newIndex < 0) newIndex = this.slides.length - 1;
+          this.showSlide(newIndex);
+        },
+        
+        init: function() {
+          // Set up event listeners
+          document.querySelector('.carousel-button.next')
+            .addEventListener('click', () => this.nextSlide());
+          document.querySelector('.carousel-button.prev')
+            .addEventListener('click', () => this.prevSlide());
+          
+          // Dot navigation
+          this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => this.showSlide(index));
+          });
+          
+          // Show first slide
+          this.showSlide(0);
+          
+          // Image error handling for placeholders
+          document.querySelectorAll('.image-card img').forEach(img => {
+            img.addEventListener('error', (e) => {
+              e.target.style.opacity = "0";
+              e.target.parentElement.querySelector('.placeholder').style.display = "flex";
+            });
+            
+            // Check if the image is already loaded
+            if (img.complete && img.naturalHeight === 0) {
+              img.style.opacity = "0";
+              img.parentElement.querySelector('.placeholder').style.display = "flex";
+            }
+          });
+        }
+      };
+      
+      // Initialize carousel when DOM is loaded
+      document.addEventListener('DOMContentLoaded', () => {
+        carousel.init();
+      });
+    </script>
+  </body>
+</html>
